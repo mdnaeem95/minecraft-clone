@@ -19,10 +19,9 @@ export const TextureSelector = () => {
   ]);
   const { dirt, grass, glass, wood, log } = useKeyboard();
 
-  const textures = { dirt, grass, glass, wood, log };
-
   useEffect(() => {
-    const pressedTexture = Object.entries.find(([k, v]) => v);
+    const textures = { dirt, grass, glass, wood, log };
+    const pressedTexture = Object.entries(textures).find(([k, v]) => v);
     if (pressedTexture) {
       setTexture(pressedTexture[0]);
     }
